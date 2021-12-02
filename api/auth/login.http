@@ -1,0 +1,21 @@
+### Login
+
+POST {{host}}/api/auth/login?remember=1
+Content-Type: application/json
+
+{
+    "email": "super.admin.system@gmail.com",
+    "password": "password"
+}
+
+
+### Refresh Token
+POST {{host}}/api/auth/refresh
+Authorization: Bearer {{token}}
+
+
+### Current User
+
+POST {{host}}/api/auth/me
+Authorization: Bearer {{token}}
+X-Company-ID: 1

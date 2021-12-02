@@ -1,0 +1,138 @@
+### Get New Process
+
+GET {{host}}/api/v1/payroll-process/new-process?filters=%5B%7B%22field%22%3A%22_.id%22%2C%22value%22%3A1%7D%5D&XDEBUG_SESSION=PHPSTORM
+Authorization: Bearer {{token}}
+
+
+### Get New Retro
+
+GET {{host}}/api/v1/payroll-process/new-retro-pay?filters=%5B%7B%22field%22%3A%22_.id%22%2C%22value%22%3A1%7D%5D&XDEBUG_SESSION=PHPSTORM
+Authorization: Bearer {{token}}
+
+
+### New Payroll Process
+
+POST {{host}}/api/v1/payroll-process/new-process?XDEBUG_SESSION=PHPSTORM
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "batch_name": "Payroll April 2021",
+  "process_date": "2021-04-25",
+  "period_start": "2021-04-01",
+  "period_end": "2021-04-30",
+
+  "location_id": 1,
+
+  "items": [
+    {
+      "employee_id": 1,
+      "entries": [
+        {
+          "element_id": 1010,
+          "ref_entry_id": 101001,
+          "values": [{"input_value_id": 10101, "entry_value": 5000000}]
+        },
+        {
+          "element_id": 1020,
+          "values": [{"input_value_id": 10201, "entry_value": 100000}, {"input_value_id": 10202, "entry_value": 20}]
+        },
+        {
+          "element_id": 2010,
+          "values": [{"input_value_id": 20109, "entry_value": 150000}]
+        },
+        {
+          "element_id": 2020,
+          "values": [{"input_value_id": 20201, "entry_value": 200000}]
+        },
+        {
+          "element_id": 2030,
+          "values": [{"input_value_id": 20301, "entry_value": 250000}]
+        },
+        {"element_id": 2040},
+        {"element_id": 2050},
+        {"element_id": 2060},
+        {
+          "element_id": 2070,
+          "ref_entry_id": 207001,
+          "values": [{"input_value_id": 20702, "entry_value": "Koperasi Serba Ada"}, {"input_value_id": 20709, "entry_value": 500000}]
+        },
+        {
+          "element_id": 2080,
+          "values": [
+            {"input_value_id": 20802, "entry_value": 2},
+            {"input_value_id": 20804, "entry_value": 1.25},
+            {"input_value_id": 20803, "entry_value": 2.5},
+            {"input_value_id": 20801, "entry_value": 1},
+            {"input_value_id": 20805, "entry_value": 3}
+          ]
+        },
+        {"element_id": 2090}
+      ]
+    }
+  ]
+}
+
+
+### New Retro Pay
+
+POST {{host}}/api/v1/payroll-process/new-retro-pay?XDEBUG_SESSION=PHPSTORM
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "batch_name": "Retro April 2021",
+  "process_date": "2021-04-25",
+  "period_start": "2021-04-01",
+  "period_end": "2021-04-30",
+  "ret_entry_period_start": "2021-05-01",
+  "ret_entry_period_end": "2021-05-31",
+
+  "location_id": 1,
+
+  "items": [
+    {
+      "employee_id": 1,
+      "entries": [
+        {
+          "element_id": 1010,
+          "ref_entry_id": 101001,
+          "values": [{"input_value_id": 10101, "entry_value": 5000000}]
+        },
+        {
+          "element_id": 1020,
+          "values": [{"input_value_id": 10201, "entry_value": 100000}, {"input_value_id": 10202, "entry_value": 20}]
+        },
+        {
+          "element_id": 2010,
+          "values": [{"input_value_id": 20109, "entry_value": 150000}]
+        },
+        {"element_id": 2040}
+      ]
+    }
+  ]
+}
+
+
+### Process Payroll
+
+POST {{host}}/api/v1/payroll-process/6/calculate?XDEBUG_SESSION=PHPSTORM
+Authorization: Bearer {{token}}
+
+
+### Validate Process
+
+POST {{host}}/api/v1/payroll-process/6/validate?XDEBUG_SESSION=PHPSTORM
+Authorization: Bearer {{token}}
+
+
+### Delete Process
+
+DELETE {{host}}/api/v1/payroll-process/1?XDEBUG_SESSION=PHPSTORM
+Authorization: Bearer {{token}}
+
+
+### Payslip
+
+GET {{host}}/api/v1/report/payslip/1?period-start=2021-04-01&period-end=2021-04-30&XDEBUG_SESSION=PHPSTORM
+Authorization: Bearer {{token}}

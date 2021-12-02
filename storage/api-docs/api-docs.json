@@ -1,0 +1,2637 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Smartbiz Payroll API",
+        "description": "API documentation for Smartbiz Payroll",
+        "contact": {
+            "email": "adisayoga@gmail.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "https://www.apache.org/licenses/LICENSE-2.0"
+        },
+        "version": "0.1.0"
+    },
+    "servers": [
+        {
+            "url": "http://smartbiz-payroll.test/api/v1",
+            "description": "Smartbiz Payroll"
+        }
+    ],
+    "paths": {
+        "/element-classifications": {
+            "get": {
+                "tags": [
+                    "Compensation"
+                ],
+                "summary": "Get all element classification per page",
+                "operationId": "f4e9c0f2037ed67bb3d879f77361b376",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "per-page",
+                        "in": "query",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "q",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "filters",
+                        "in": "query",
+                        "schema": {
+                            "type": "{field: string, operator?: string, value: any}[]"
+                        }
+                    },
+                    {
+                        "name": "sorts",
+                        "in": "query",
+                        "schema": {
+                            "type": "string[]"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Compensation"
+                ],
+                "summary": "Insert new element classification",
+                "operationId": "451563b8ba4462096f046c5855fe21ff",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {}
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/element-classifications/list-cbx": {
+            "get": {
+                "tags": [
+                    "Compensation"
+                ],
+                "summary": "Get all element classification for combobox",
+                "operationId": "70694226ae422a4e12757210c02160a4",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/element-classifications/{classificationId}": {
+            "get": {
+                "tags": [
+                    "Compensation"
+                ],
+                "summary": "Get one element classification",
+                "operationId": "4ae54e2d1f283500923aed3af5bc5516",
+                "parameters": [
+                    {
+                        "name": "classificationId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": [
+                    "Compensation"
+                ],
+                "summary": "Update element classification",
+                "operationId": "47db23bf1820276ce6e48b5365cae2a4",
+                "parameters": [
+                    {
+                        "name": "classificationId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {}
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Compensation"
+                ],
+                "summary": "Delete element classification",
+                "operationId": "97522f340ef011c8b7ee815ccd269b07",
+                "parameters": [
+                    {
+                        "name": "classificationId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/element-links": {
+            "get": {
+                "tags": [
+                    "Compensation"
+                ],
+                "summary": "Get all element link per page",
+                "operationId": "e60a0dcfb640ee69dba34ba297f87ee9",
+                "parameters": [
+                    {
+                        "name": "effective",
+                        "in": "query",
+                        "schema": {
+                            "type": "date",
+                            "format": "yyyy-MM-dd"
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "per-page",
+                        "in": "query",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "q",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "filters",
+                        "in": "query",
+                        "schema": {
+                            "type": "{field: string, operator?: string, value: any}[]"
+                        }
+                    },
+                    {
+                        "name": "sorts",
+                        "in": "query",
+                        "schema": {
+                            "type": "string[]"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Compensation"
+                ],
+                "summary": "Insert new element link",
+                "operationId": "96b486255dea7f60ba1b58a18475ab7e",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {}
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/element-links/{linkId}": {
+            "get": {
+                "tags": [
+                    "Compensation"
+                ],
+                "summary": "Get one element link",
+                "operationId": "b0138d01ca6dee4359ba7465a60ef3d8",
+                "parameters": [
+                    {
+                        "name": "linkId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "effective",
+                        "in": "query",
+                        "schema": {
+                            "type": "date",
+                            "format": "yyyy-MM-dd"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": [
+                    "Compensation"
+                ],
+                "summary": "Update element link",
+                "operationId": "1bbf8f6f6e2407bb2a2524dce2e435d8",
+                "parameters": [
+                    {
+                        "name": "linkId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "effective",
+                        "in": "query",
+                        "schema": {
+                            "type": "date",
+                            "format": "yyyy-MM-dd"
+                        }
+                    },
+                    {
+                        "name": "mode",
+                        "in": "query"
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {}
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Compensation"
+                ],
+                "summary": "Delete element link",
+                "operationId": "e30bf4dd912835cbbbbf5c22f26fecae",
+                "parameters": [
+                    {
+                        "name": "linkId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/element-links/values/{valueId}": {
+            "get": {
+                "tags": [
+                    "Compensation"
+                ],
+                "summary": "Get one element link value",
+                "operationId": "83f592b025e02b888d54165c3555b5bc",
+                "parameters": [
+                    {
+                        "name": "valueId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "effective",
+                        "in": "query",
+                        "schema": {
+                            "type": "date",
+                            "format": "yyyy-MM-dd"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": [
+                    "Compensation"
+                ],
+                "summary": "Update element link value",
+                "operationId": "c75a3afd767471fc4f259ee8c30c6dc1",
+                "parameters": [
+                    {
+                        "name": "valueId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "effective",
+                        "in": "query",
+                        "schema": {
+                            "type": "date",
+                            "format": "yyyy-MM-dd"
+                        }
+                    },
+                    {
+                        "name": "mode",
+                        "in": "query"
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {}
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Compensation"
+                ],
+                "summary": "Delete element link value",
+                "operationId": "a78a015b95039324c7e955cfad86352d",
+                "parameters": [
+                    {
+                        "name": "valueId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/element-links/{linkId}/values": {
+            "post": {
+                "tags": [
+                    "Compensation"
+                ],
+                "summary": "Insert new element link value",
+                "operationId": "aeee98a19fd0f2814b248bae123f918e",
+                "parameters": [
+                    {
+                        "name": "linkId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {}
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/payroll-balances": {
+            "get": {
+                "tags": [
+                    "Compensation"
+                ],
+                "summary": "Get all payroll balance per page",
+                "operationId": "30cc7dcf7f36157696a64339be614659",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "per-page",
+                        "in": "query",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "q",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "filters",
+                        "in": "query",
+                        "schema": {
+                            "type": "{field: string, operator?: string, value: any}[]"
+                        }
+                    },
+                    {
+                        "name": "sorts",
+                        "in": "query",
+                        "schema": {
+                            "type": "string[]"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Compensation"
+                ],
+                "summary": "Insert new payroll balance",
+                "operationId": "7bc654b6ff148586a57856eb20ddbd74",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {}
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/payroll-balances/{balanceId}": {
+            "get": {
+                "tags": [
+                    "Compensation"
+                ],
+                "summary": "Get one payroll balance",
+                "operationId": "d78fb4119857dfdcc06ec8c883877dbb",
+                "parameters": [
+                    {
+                        "name": "balanceId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "effective",
+                        "in": "query",
+                        "schema": {
+                            "type": "date",
+                            "format": "yyyy-MM-dd"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": [
+                    "Compensation"
+                ],
+                "summary": "Update payroll balance",
+                "operationId": "66fa50f370171121b56729abe17ad071",
+                "parameters": [
+                    {
+                        "name": "balanceId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {}
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Compensation"
+                ],
+                "summary": "Delete payroll balance",
+                "operationId": "5ff8be8ba400eeb304386d0de1892461",
+                "parameters": [
+                    {
+                        "name": "balanceId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/payroll-elements/values/{feedId}": {
+            "get": {
+                "tags": [
+                    "Compensation"
+                ],
+                "summary": "Get one payroll balance feed",
+                "operationId": "e4f5df860b909c8fe6bb213dfe6e3d51",
+                "parameters": [
+                    {
+                        "name": "feedId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "effective",
+                        "in": "query",
+                        "schema": {
+                            "type": "date",
+                            "format": "yyyy-MM-dd"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/payroll-balances/{balanceId}/feeds": {
+            "post": {
+                "tags": [
+                    "Compensation"
+                ],
+                "summary": "Insert new payroll balance feed",
+                "operationId": "6fb67e8e1b482d5633d7f71d980e405d",
+                "parameters": [
+                    {
+                        "name": "balanceId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {}
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/payroll-balances/feeds/{balanceId}": {
+            "put": {
+                "tags": [
+                    "Compensation"
+                ],
+                "summary": "Update payroll balance feed",
+                "operationId": "cee0b008daf7e735fd0b9dfb8b29b1f3",
+                "parameters": [
+                    {
+                        "name": "balanceId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "effective",
+                        "in": "query",
+                        "schema": {
+                            "type": "date",
+                            "format": "yyyy-MM-dd"
+                        }
+                    },
+                    {
+                        "name": "mode",
+                        "in": "query"
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {}
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Compensation"
+                ],
+                "summary": "Delete payroll balance feed",
+                "operationId": "042e0b877bad5ba60f16acc61577074e",
+                "parameters": [
+                    {
+                        "name": "balanceId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/payroll-elements": {
+            "get": {
+                "tags": [
+                    "Compensation"
+                ],
+                "summary": "Get all payroll element per page",
+                "operationId": "334cc659bc3a07c4b7bbd1adaf5a695b",
+                "parameters": [
+                    {
+                        "name": "effective",
+                        "in": "query",
+                        "schema": {
+                            "type": "date",
+                            "format": "yyyy-MM-dd"
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "per-page",
+                        "in": "query",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "q",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "filters",
+                        "in": "query",
+                        "schema": {
+                            "type": "{field: string, operator?: string, value: any}[]"
+                        }
+                    },
+                    {
+                        "name": "sorts",
+                        "in": "query",
+                        "schema": {
+                            "type": "string[]"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Compensation"
+                ],
+                "summary": "Insert new payroll element",
+                "operationId": "fa58584cac8c027481e57da96e8ca63a",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "element_name": {
+                                        "type": "string"
+                                    },
+                                    "effective_start": {
+                                        "type": "string",
+                                        "format": "yyyy-MM-dd"
+                                    },
+                                    "effective_end": {
+                                        "type": "string",
+                                        "format": "yyyy-MM-dd"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/payroll-elements/list-cbx": {
+            "get": {
+                "tags": [
+                    "Compensation"
+                ],
+                "summary": "Get all payroll element for combobox",
+                "operationId": "e5290901e125f00d97e28e6efacd67d2",
+                "parameters": [
+                    {
+                        "name": "effective",
+                        "in": "query",
+                        "schema": {
+                            "type": "date",
+                            "format": "yyyy-MM-dd"
+                        }
+                    },
+                    {
+                        "name": "q",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "filters",
+                        "in": "query",
+                        "schema": {
+                            "type": "{field: string, operator?: string, value: any}[]"
+                        }
+                    },
+                    {
+                        "name": "sorts",
+                        "in": "query",
+                        "schema": {
+                            "type": "string[]"
+                        }
+                    },
+                    {
+                        "name": "include-values",
+                        "in": "query",
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/payroll-elements/{elementId}": {
+            "get": {
+                "tags": [
+                    "Compensation"
+                ],
+                "summary": "Get one payroll element",
+                "operationId": "408f5518f387160a8febc1f346a0c1cc",
+                "parameters": [
+                    {
+                        "name": "elementId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "effective",
+                        "in": "query",
+                        "schema": {
+                            "type": "date",
+                            "format": "yyyy-MM-dd"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": [
+                    "Compensation"
+                ],
+                "summary": "Update payroll element",
+                "operationId": "bd8d5f9a0213acfbda04bf05c313ad32",
+                "parameters": [
+                    {
+                        "name": "elementId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "effective",
+                        "in": "query",
+                        "schema": {
+                            "type": "date",
+                            "format": "yyyy-MM-dd"
+                        }
+                    },
+                    {
+                        "name": "mode",
+                        "in": "query"
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "element_name": {
+                                        "type": "string"
+                                    },
+                                    "effective_start": {
+                                        "type": "string",
+                                        "format": "yyyy-MM-dd"
+                                    },
+                                    "effective_end": {
+                                        "type": "string",
+                                        "format": "yyyy-MM-dd"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Compensation"
+                ],
+                "summary": "Delete payroll element",
+                "operationId": "97ef1ee02a3c186e62a1dbe3ee14281a",
+                "parameters": [
+                    {
+                        "name": "elementId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/payroll-elements/values/{inputValueId}": {
+            "get": {
+                "tags": [
+                    "Compensation"
+                ],
+                "summary": "Get one payroll input value",
+                "operationId": "e9edbec59f98051bfcdc124c76f26a6a",
+                "parameters": [
+                    {
+                        "name": "inputValueId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "effective",
+                        "in": "query",
+                        "schema": {
+                            "type": "date",
+                            "format": "yyyy-MM-dd"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": [
+                    "Compensation"
+                ],
+                "summary": "Update payroll input value",
+                "operationId": "a45e3493738026f793f56fb34ff9bbf6",
+                "parameters": [
+                    {
+                        "name": "inputValueId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "effective",
+                        "in": "query",
+                        "schema": {
+                            "type": "date",
+                            "format": "yyyy-MM-dd"
+                        }
+                    },
+                    {
+                        "name": "mode",
+                        "in": "query"
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {}
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Compensation"
+                ],
+                "summary": "Delete payroll input value",
+                "operationId": "a152d2c9c8787cca08070fb4275b2c2d",
+                "parameters": [
+                    {
+                        "name": "inputValueId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/payroll-elements/{elementId}/values": {
+            "post": {
+                "tags": [
+                    "Compensation"
+                ],
+                "summary": "Insert new payroll input value",
+                "operationId": "8eda27f2ecdb50833fddb9d29dd9ea5f",
+                "parameters": [
+                    {
+                        "name": "elementId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {}
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/payroll-formulas": {
+            "get": {
+                "tags": [
+                    "Compensation"
+                ],
+                "summary": "Get all payroll formula per page",
+                "operationId": "b01adb1ad7e829bbfde07b74a42b8506",
+                "parameters": [
+                    {
+                        "name": "effective",
+                        "in": "query",
+                        "schema": {
+                            "type": "date",
+                            "format": "yyyy-MM-dd"
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "per-page",
+                        "in": "query",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "q",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "filters",
+                        "in": "query",
+                        "schema": {
+                            "type": "{field: string, operator?: string, value: any}[]"
+                        }
+                    },
+                    {
+                        "name": "sorts",
+                        "in": "query",
+                        "schema": {
+                            "type": "string[]"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Compensation"
+                ],
+                "summary": "Insert new payroll formula",
+                "operationId": "0dfd1fecbc34363673334cae9e21a4ce",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {}
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/payroll-formulas/list-cbx": {
+            "get": {
+                "tags": [
+                    "Compensation"
+                ],
+                "summary": "List all payroll formula for combob box",
+                "operationId": "a2e66b77dd0e08c1c285934fd120666a",
+                "parameters": [
+                    {
+                        "name": "effective",
+                        "in": "query",
+                        "schema": {
+                            "type": "date",
+                            "format": "yyyy-MM-dd"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/payroll-formulas/{formulaId}": {
+            "get": {
+                "tags": [
+                    "Compensation"
+                ],
+                "summary": "Get one payroll formula",
+                "operationId": "8d594b3880749ddec5834f9d8482b07b",
+                "parameters": [
+                    {
+                        "name": "formulaId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "effective",
+                        "in": "query",
+                        "schema": {
+                            "type": "date",
+                            "format": "yyyy-MM-dd"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": [
+                    "Compensation"
+                ],
+                "summary": "Update payroll formula",
+                "operationId": "5f90852ee2713d902e70a6ced225a93e",
+                "parameters": [
+                    {
+                        "name": "formulaId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "effective",
+                        "in": "query",
+                        "schema": {
+                            "type": "date",
+                            "format": "yyyy-MM-dd"
+                        }
+                    },
+                    {
+                        "name": "mode",
+                        "in": "query"
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {}
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Compensation"
+                ],
+                "summary": "Delete payroll formula",
+                "operationId": "75212e6c2c010d76523225414a3d33c1",
+                "parameters": [
+                    {
+                        "name": "formulaId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/payroll-elements/values/{resultId}": {
+            "get": {
+                "tags": [
+                    "Compensation"
+                ],
+                "summary": "Get one payroll formula result",
+                "operationId": "9733cbdf3d48aa563f6a1dcb876e4d5d",
+                "parameters": [
+                    {
+                        "name": "resultId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "effective",
+                        "in": "query",
+                        "schema": {
+                            "type": "date",
+                            "format": "yyyy-MM-dd"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/payroll-formulas/{formulaId}/results": {
+            "post": {
+                "tags": [
+                    "Compensation"
+                ],
+                "summary": "Insert new payroll formula result",
+                "operationId": "a17e743f4c7f132748849f20b980476c",
+                "parameters": [
+                    {
+                        "name": "formulaId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {}
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/payroll-formulas/results/{resultId}": {
+            "put": {
+                "tags": [
+                    "Compensation"
+                ],
+                "summary": "Update payroll formula result",
+                "operationId": "9594aa04dcdecbc09b67d76eb65875fc",
+                "parameters": [
+                    {
+                        "name": "resultId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "effective",
+                        "in": "query",
+                        "schema": {
+                            "type": "date",
+                            "format": "yyyy-MM-dd"
+                        }
+                    },
+                    {
+                        "name": "mode",
+                        "in": "query"
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {}
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Compensation"
+                ],
+                "summary": "Delete payroll formula result",
+                "operationId": "67af5018380e897047e9083b97d36bd9",
+                "parameters": [
+                    {
+                        "name": "resultId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/payroll-groups": {
+            "get": {
+                "tags": [
+                    "Compensation"
+                ],
+                "summary": "Get all payroll group per page",
+                "operationId": "ac774a2bcabce2389f27ae78f70f811e",
+                "parameters": [
+                    {
+                        "name": "effective",
+                        "in": "query",
+                        "schema": {
+                            "type": "date",
+                            "format": "yyyy-MM-dd"
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "per-page",
+                        "in": "query",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "q",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "filters",
+                        "in": "query",
+                        "schema": {
+                            "type": "{field: string, operator?: string, value: any}[]"
+                        }
+                    },
+                    {
+                        "name": "sorts",
+                        "in": "query",
+                        "schema": {
+                            "type": "string[]"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Compensation"
+                ],
+                "summary": "Insert new payroll group",
+                "operationId": "521ce86b901d40072a9584dca1d91af8",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {}
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/payroll-groups/list-cbx": {
+            "get": {
+                "tags": [
+                    "Compensation"
+                ],
+                "summary": "List all payroll groups for combob box",
+                "operationId": "ff9e91b0bb396517571591e28242aa63",
+                "parameters": [
+                    {
+                        "name": "effective",
+                        "in": "query",
+                        "schema": {
+                            "type": "date",
+                            "format": "yyyy-MM-dd"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/payroll-groups/{payrollGroupId}": {
+            "get": {
+                "tags": [
+                    "Compensation"
+                ],
+                "summary": "Get one payroll group",
+                "operationId": "20b27c9e00a22e571a5d90f3ef2b6e17",
+                "parameters": [
+                    {
+                        "name": "payrollGroupId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "effective",
+                        "in": "query",
+                        "schema": {
+                            "type": "date",
+                            "format": "yyyy-MM-dd"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": [
+                    "Compensation"
+                ],
+                "summary": "Update payroll group",
+                "operationId": "5a5763d84e3abe62fd4fc2793212d8f7",
+                "parameters": [
+                    {
+                        "name": "payrollGroupId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "effective",
+                        "in": "query",
+                        "schema": {
+                            "type": "date",
+                            "format": "yyyy-MM-dd"
+                        }
+                    },
+                    {
+                        "name": "mode",
+                        "in": "query"
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {}
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Compensation"
+                ],
+                "summary": "Delete payroll group",
+                "operationId": "a8c45f42f9e964e1e2e01ddab6ac889b",
+                "parameters": [
+                    {
+                        "name": "payrollGroupId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/salary-basis": {
+            "get": {
+                "tags": [
+                    "Compensation"
+                ],
+                "summary": "Get all salary basis per page",
+                "operationId": "eda68a9272b9ff44667931c6528b1396",
+                "parameters": [
+                    {
+                        "name": "effective",
+                        "in": "query",
+                        "schema": {
+                            "type": "date",
+                            "format": "yyyy-MM-dd"
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "per-page",
+                        "in": "query",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "q",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "filters",
+                        "in": "query",
+                        "schema": {
+                            "type": "{field: string, operator?: string, value: any}[]"
+                        }
+                    },
+                    {
+                        "name": "sorts",
+                        "in": "query",
+                        "schema": {
+                            "type": "string[]"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Compensation"
+                ],
+                "summary": "Insert new salary basis",
+                "operationId": "92d0aac5d52ac4a2c21468421e6e1665",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {}
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/salary-basis/{salaryBasisId}": {
+            "get": {
+                "tags": [
+                    "Compensation"
+                ],
+                "summary": "Get one salary basis",
+                "operationId": "a82c01849ba1c525c073a10014a93d5c",
+                "parameters": [
+                    {
+                        "name": "salaryBasisId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "effective",
+                        "in": "query",
+                        "schema": {
+                            "type": "date",
+                            "format": "yyyy-MM-dd"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": [
+                    "Compensation"
+                ],
+                "summary": "Update salary basis",
+                "operationId": "80e749b1b440a26de1b58288c19699ee",
+                "parameters": [
+                    {
+                        "name": "salaryBasisId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {}
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Compensation"
+                ],
+                "summary": "Delete salary basis",
+                "operationId": "90de662e99970ec9aa673da3453e9869",
+                "parameters": [
+                    {
+                        "name": "salaryBasisId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/formula-list/list-cbx": {
+            "get": {
+                "tags": [
+                    "Master"
+                ],
+                "summary": "List all predefined formula",
+                "operationId": "1394e4e6e5fe9082195d6d49d7b58df2",
+                "parameters": [
+                    {
+                        "name": "category",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/tracking-history/{name}/{id}": {
+            "get": {
+                "tags": [
+                    "Master"
+                ],
+                "summary": "List date tracking history per item",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "number | string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/employees/list-cbx": {
+            "get": {
+                "tags": [
+                    "Personal"
+                ],
+                "summary": "Get all employees for combobox",
+                "operationId": "543b06a06b7b16b71c9fba4e2610bb8e",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/departments/list-cbx": {
+            "get": {
+                "tags": [
+                    "WorkStructure"
+                ],
+                "summary": "Get all departments/work units for combobox",
+                "operationId": "dcf15bf77fee5d7ae452e3f856a39ef2",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/grades/list-cbx": {
+            "get": {
+                "tags": [
+                    "WorkStructure"
+                ],
+                "summary": "Get all employee grades for combobox",
+                "operationId": "03e35a6ca0bb21c6257144499dfbf747",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/locations/list-cbx": {
+            "get": {
+                "tags": [
+                    "WorkStructure"
+                ],
+                "summary": "Get all locations/work areas for combobox",
+                "operationId": "9682106c1d8d6e1ef52bd5e41b69c192",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/offices/list-cbx": {
+            "get": {
+                "tags": [
+                    "WorkStructure"
+                ],
+                "summary": "Get all offices for combobox",
+                "operationId": "5d1c8c595d61302c2669c6af3e19df48",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/positions/list-cbx": {
+            "get": {
+                "tags": [
+                    "WorkStructure"
+                ],
+                "summary": "Get all employee positions for combobox",
+                "operationId": "afc6ae124c40bd74a539ef5d9ec4d361",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/projects/list-cbx": {
+            "get": {
+                "tags": [
+                    "WorkStructure"
+                ],
+                "summary": "Get all projects for combobox",
+                "operationId": "cd87ad136c240d4a1e06250e0a84df9a",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Master",
+            "description": "Master Data"
+        },
+        {
+            "name": "WorkStructure",
+            "description": "Work Structure"
+        },
+        {
+            "name": "Personal",
+            "description": "Personal Data"
+        },
+        {
+            "name": "Parameter",
+            "description": "Parameter Configuration"
+        },
+        {
+            "name": "Compensation",
+            "description": "Compensation Administration"
+        },
+        {
+            "name": "Payroll",
+            "description": "Payroll Process"
+        }
+    ],
+    "components": {
+        "securitySchemes": {
+            "bearer_token": {
+                "type": "apiKey",
+                "description": "Enter token in format: Bearer [token]",
+                "name": "Authorization",
+                "in": "header"
+            }
+        }
+    },
+    "security": [
+        []
+    ]
+}
